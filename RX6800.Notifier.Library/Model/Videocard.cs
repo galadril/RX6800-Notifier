@@ -16,8 +16,8 @@
         RX6800XT,
 
         /// <summary>
-        /// Defines the RX6900 Videocard.
+        /// Defines the RX6900XT Videocard.
         /// </summary>
-        RX6900,
+        RX6900XT,
     }
 }

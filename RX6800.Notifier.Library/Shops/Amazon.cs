@@ -33,7 +33,7 @@ namespace RX6800.Notifier.Library.Shop
             {
                 Videocard.RX6800 => "https://www.amazon.nl/s?k=Grafische+kaart+RX+6800&i=electronics&__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss",
                 Videocard.RX6800XT => "https://www.amazon.nl/s?k=Grafische+kaart+RX+6800+XT&i=electronics&__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss",
-                Videocard.RX6900 => "https://www.amazon.nl/s?k=Grafische+kaart+RX+6900+XT&i=electronics&__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss",
+                Videocard.RX6900XT => "https://www.amazon.nl/s?k=Grafische+kaart+RX+6900+XT&i=electronics&__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss",
                 _ => Url,
             };
         }
@@ -47,7 +47,7 @@ namespace RX6800.Notifier.Library.Shop
             Dictionary<Videocard, int> values = new Dictionary<Videocard, int>();
             GetStock(Videocard.RX6800, "RX 6800", values);
             GetStock(Videocard.RX6800XT, "RX 6800 XT", values);
-            GetStock(Videocard.RX6900, "RX 6900", values);
+            GetStock(Videocard.RX6900XT, "RX 6900 XT", values);
             return new Stock(this, values);
         }
 

@@ -33,7 +33,7 @@ namespace RX6800.Notifier.Library.Shop
             {
                 Videocard.RX6800 => "https://azerty.nl/category/componenten/videokaarten/AMD_Radeon/RX_6800#!sorting=12&limit=96&view=grid",
                 Videocard.RX6800XT => "https://azerty.nl/category/componenten/videokaarten/AMD_Radeon/RX_6800_XT#!sorting=12&limit=96&view=grid",
-                Videocard.RX6900 => "https://azerty.nl/category/componenten/videokaarten/AMD_Radeon/RX_6900#!sorting=12&limit=96&view=grid",
+                Videocard.RX6900XT => "https://azerty.nl/category/componenten/videokaarten/AMD_Radeon/RX_6900#!sorting=12&limit=96&view=grid",
                 _ => Url,
             };
         }
@@ -105,8 +105,8 @@ namespace RX6800.Notifier.Library.Shop
                 case Videocard.RX6800XT:
                     str += "6800 XT";
                     break;
-                case Videocard.RX6900:
-                    str += "6900";
+                case Videocard.RX6900XT:
+                    str += "6900 XT";
                     break;
             }
 

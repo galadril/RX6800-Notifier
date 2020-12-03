@@ -32,7 +32,7 @@ namespace RX6800.Notifier.Library.Shop
             {
                 Videocard.RX6800 => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6800",
                 Videocard.RX6800XT => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6800-XT",
-                Videocard.RX6900 => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6900",
+                Videocard.RX6900XT => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6900",
                 _ => Url,
             };
         }
@@ -76,8 +76,8 @@ namespace RX6800.Notifier.Library.Shop
                 case Videocard.RX6800XT:
                     str += "6800 XT";
                     break;
-                case Videocard.RX6900:
-                    str += "6900";
+                case Videocard.RX6900XT:
+                    str += "6900 XT";
                     break;
             }
 

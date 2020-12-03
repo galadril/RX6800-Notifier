@@ -110,8 +110,8 @@ namespace RX6800.Notifier.Library.Shop
                 case Videocard.RX6800XT:
                     str += "6800 XT";
                     break;
-                case Videocard.RX6900:
-                    str += "6900";
+                case Videocard.RX6900XT:
+                    str += "6900 XT";
                     break;
             }
 
