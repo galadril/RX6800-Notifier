@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RX6800.Notifier.Console", "RX6800.Notifier.Console\RX6800.Notifier.Console.csproj", "{28C63AF4-4117-43E9-8B6E-7C6C9B0ABECB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{0D6BB8D0-5B9D-470B-B1D5-64C0C0854ABA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RX6800.Notifier.Library", "RX6800.Notifier.Library\RX6800.Notifier.Library.csproj", "{9DD54EF7-DD2E-45AC-9EE4-FD2DB580ADE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28C63AF4-4117-43E9-8B6E-7C6C9B0ABECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C63AF4-4117-43E9-8B6E-7C6C9B0ABECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C63AF4-4117-43E9-8B6E-7C6C9B0ABECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C63AF4-4117-43E9-8B6E-7C6C9B0ABECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD54EF7-DD2E-45AC-9EE4-FD2DB580ADE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD54EF7-DD2E-45AC-9EE4-FD2DB580ADE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD54EF7-DD2E-45AC-9EE4-FD2DB580ADE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD54EF7-DD2E-45AC-9EE4-FD2DB580ADE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14D7BE3E-C9CD-4ABF-BBF0-F680ECF45536}
+	EndGlobalSection
+EndGlobal
