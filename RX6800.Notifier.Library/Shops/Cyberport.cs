@@ -36,6 +36,7 @@ namespace RX6800.Notifier.Library.Shop
             {
                 Videocard.RX6800 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=AMD%20RX%206800&page=1&stockLevelStatus=IMMEDIATELY",
                 Videocard.RX6800XT => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=AMD%20RX%206800%20XT&page=1&stockLevelStatus=IMMEDIATELY",
+                Videocard.RX6900 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=AMD%20RX%206900&page=1&stockLevelStatus=IMMEDIATELY",
                 _ => Url,
             };
         }
@@ -49,6 +50,7 @@ namespace RX6800.Notifier.Library.Shop
             Dictionary<Videocard, int> values = new Dictionary<Videocard, int>();
             GetStock(Videocard.RX6800, "RX 6800", values);
             GetStock(Videocard.RX6800XT, "RX 6800 XT", values);
+            GetStock(Videocard.RX6900, "RX 6900", values);
             return new Stock(this, values);
         }
 

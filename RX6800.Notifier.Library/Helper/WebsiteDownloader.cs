@@ -35,7 +35,7 @@ namespace RX6800.Notifier.Library.Helper
             }
             catch (Exception)
             {
-                Logger.HtmlDownloadError(url);
+                //Logger.HtmlDownloadError(url);
                 return "";
             }
         }

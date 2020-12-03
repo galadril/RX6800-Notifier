@@ -32,6 +32,7 @@ namespace RX6800.Notifier.Library.Shop
             {
                 Videocard.RX6800 => "https://www.informatique.nl/zoeken/?q=6800&k=20201125&g=166", //Could be improved.. but i dont know the product id
                 Videocard.RX6800XT => "https://www.informatique.nl/zoeken/?k=20201203&q=6800+XT&s=", //Could be improved.. but i dont know the product id
+                Videocard.RX6900 => "https://www.informatique.nl/zoeken/?k=20201203&q=6900+XT&s=", //Could be improved.. but i dont know the product id
                 _ => Url,
             };
         }
@@ -82,6 +83,9 @@ namespace RX6800.Notifier.Library.Shop
                     break;
                 case Videocard.RX6800XT:
                     str += "6800 XT";
+                    break;
+                case Videocard.RX6900:
+                    str += "6900";
                     break;
             }
             if (html != "")

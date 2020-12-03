@@ -77,7 +77,7 @@ namespace RX6800.Notifier.Library.Helper
                         $"De voorraad van {Enum.GetName(typeof(Videocard), videocard)} is aangevuld bij <a href=\"{stock.Website.GetProductUrl(videocard)}\">{stock.Website.GetType().Name}</a><br><br>" +
                         "Wees er snel bij!<br><br>" +
                         $"<a href=\"https://geforce.nieknijland.com/voorkeuren/{subscriber.Id}\">Emailvoorkeur aanpassen</a>";
-            SendMail(subscriber.Email, subject, body);
+            //SendMail(subscriber.Email, subject, body);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace RX6800.Notifier.Library.Helper
             string subject = $"AMDTracker: new log";
             string body = "AMDTracker meld het volgende:<br><br>" + log;
 
-            SendMail(Constants.GetErrorLogAddress(), subject, body);
+            //SendMail(Constants.GetErrorLogAddress(), subject, body);
         }
 
         /// <summary>
