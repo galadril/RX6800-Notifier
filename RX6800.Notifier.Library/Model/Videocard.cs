@@ -6,23 +6,13 @@
     public enum Videocard
     {
         /// <summary>
-        /// Defines the RTX3060TI Videocard.
+        /// Defines the RX6800 Videocard.
         /// </summary>
-        RTX3060TI,
+        RX6800,
 
         /// <summary>
-        /// Defines the RTX3070 Videocard.
+        /// Defines the RX6800XT Videocard.
         /// </summary>
-        RTX3070,
-
-        /// <summary>
-        /// Defines the RTX3080 Videocard.
-        /// </summary>
-        RTX3080,
-
-        /// <summary>
-        /// Defines the RTX3090 Videocard.
-        /// </summary>
-        RTX3090
+        RX6800XT,
     }
 }

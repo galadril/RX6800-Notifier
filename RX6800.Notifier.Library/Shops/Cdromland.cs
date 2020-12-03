@@ -100,21 +100,15 @@ namespace RX6800.Notifier.Library.Shop
         /// <returns>The <see cref="int"/>.</returns>
         private int CheckHtmlForStock(string html, Videocard card)
         {
-            string str = "GeForce RTX ";
+            string str = "AMD RX ";
 
             switch (card)
             {
-                case Videocard.RTX3060TI:
-                    str += "3060 Ti";
+                case Videocard.RX6800:
+                    str += "6800";
                     break;
-                case Videocard.RTX3070:
-                    str += "3070";
-                    break;
-                case Videocard.RTX3080:
-                    str += "3080";
-                    break;
-                case Videocard.RTX3090:
-                    str += "3090";
+                case Videocard.RX6800XT:
+                    str += "6800 XT";
                     break;
             }
 

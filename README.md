@@ -3,7 +3,6 @@
 
 ## Currently scrapes from:
 - megekko.nl
-- azerty.nl
 - informatique.nl
 - cdromland.nl
 - coolblue.nl

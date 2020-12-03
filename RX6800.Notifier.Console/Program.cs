@@ -16,7 +16,7 @@ namespace RX6800.Notifier
         /// <param name="args">The args<see cref="string[]"/>.</param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to GeForce Tracker");
+            Console.WriteLine("Welcome to AMD Tracker");
             Console.WriteLine("Press any key to exit\n\n");
 
             var notifier = new RX6800.Notifier.Library.Model.Notifier();
@@ -29,11 +29,11 @@ namespace RX6800.Notifier
             notifier.TrackWebsite(new Amazon());
             notifier.TrackWebsite(new Centralpoint());
             notifier.TrackWebsite(new PCKing());
-            //notifier.TrackWebsite(new MaxICT());
+            notifier.TrackWebsite(new MaxICT());
 
             notifier.Start();
             if(Constants.GetUseToasts())
-                RX6800.Notifier.Library.Helper.Mailer.SendToast("RTX 3000 notifier started", "");
+                RX6800.Notifier.Library.Helper.Mailer.SendToast("RTX 6800 notifier started", "");
             Console.ReadLine();
         }
     }

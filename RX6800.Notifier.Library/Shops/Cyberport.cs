@@ -19,7 +19,7 @@ namespace RX6800.Notifier.Library.Shop
         /// <summary>
         /// Gets or sets the Url.
         /// </summary>
-        public string Url { get; set; } = "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/nvidia-fuer-gaming.html?productsPerPage=100&sort=popularity&2E_Grafikchip=GeForce%20RTX%203070,GeForce%20RTX%203080,GeForce%20RTX%203090&page=1&stockLevelStatus=IMMEDIATELY";
+        public string Url { get; set; } = "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=100&sort=popularity&2E_Grafikchip=AMD%20RX%206800%20XT,AMD%20RX%206800&page=1&stockLevelStatus=IMMEDIATELY";
 
         #endregion
 
@@ -34,10 +34,8 @@ namespace RX6800.Notifier.Library.Shop
         {
             return card switch
             {
-                Videocard.RTX3060TI => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/nvidia-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=GeForce%20RTX%203060&page=1&stockLevelStatus=IMMEDIATELY",
-                Videocard.RTX3070 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/nvidia-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=GeForce%20RTX%203070&page=1&stockLevelStatus=IMMEDIATELY",
-                Videocard.RTX3080 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/nvidia-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=GeForce%20RTX%203080&page=1&stockLevelStatus=IMMEDIATELY",
-                Videocard.RTX3090 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/nvidia-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=GeForce%20RTX%203090&page=1&stockLevelStatus=IMMEDIATELY",
+                Videocard.RX6800 => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=AMD%20RX%206800&page=1&stockLevelStatus=IMMEDIATELY",
+                Videocard.RX6800XT => "https://www.cyberport.de/pc-und-zubehoer/komponenten/grafikkarten/amd-fuer-gaming.html?productsPerPage=50&sort=popularity&2E_Grafikchip=AMD%20RX%206800%20XT&page=1&stockLevelStatus=IMMEDIATELY",
                 _ => Url,
             };
         }
@@ -49,10 +47,8 @@ namespace RX6800.Notifier.Library.Shop
         public Stock GetStock()
         {
             Dictionary<Videocard, int> values = new Dictionary<Videocard, int>();
-            values.Add(Videocard.RTX3060TI, GetStock(GetProductUrl(Videocard.RTX3060TI), "RTX 3060", values));
-            values.Add(Videocard.RTX3070, GetStock(GetProductUrl(Videocard.RTX3070), "RTX 3070", values));
-            values.Add(Videocard.RTX3080, GetStock(GetProductUrl(Videocard.RTX3080), "RTX 3080", values));
-            values.Add(Videocard.RTX3090, GetStock(GetProductUrl(Videocard.RTX3090), "RTX 3090", values));
+            GetStock(Videocard.RX6800, "RX 6800", values);
+            GetStock(Videocard.RX6800XT, "RX 6800 XT", values);
             return new Stock(this, values);
         }
 
@@ -67,21 +63,22 @@ namespace RX6800.Notifier.Library.Shop
         /// <param name="name">The name<see cref="string"/>.</param>
         /// <param name="values">The values<see cref="Dictionary{Videocard, int}"/>.</param>
         /// <returns>The <see cref="int"/>.</returns>
-        private int GetStock(string url, string name, Dictionary<Videocard, int> values)
+        private void GetStock(Videocard card, string name, Dictionary<Videocard, int> values)
         {
-            string html = GetHTML(url).Result;
+            string html = GetHTML(GetProductUrl(card)).Result;
 
             try
             {
                 html = html.Replace(@"\", string.Empty);
                 var splittedHtml = html.Split("<article class=\" productArticle\"");
-                var filteredPerName = splittedHtml.Where(o => o.Contains(name)).ToList();
-                var filtered = filteredPerName.Where(o => !o.Contains("DOCTYPE") && o.Contains("Sofort verfügbar")).ToList();
-                return filtered.Count();
+                var filteredByName = splittedHtml.Where(o => o.Contains(name)).ToList();
+                if (card == Videocard.RX6800)
+                    filteredByName = filteredByName.Where(o => !o.Contains("RX 6800 XT")).ToList();
+                var filtered = filteredByName.Where(o => !o.Contains("DOCTYPE") && o.Contains("Sofort verfügbar")).ToList();
+                values.Add(card, filtered.Count());
             }
             catch (Exception)
             { }
-            return -1;
         }
 
         /// <summary>

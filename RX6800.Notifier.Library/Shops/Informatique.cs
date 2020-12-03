@@ -30,10 +30,8 @@ namespace RX6800.Notifier.Library.Shop
         {
             return card switch
             {
-                Videocard.RTX3060TI => "https://www.informatique.nl/zoeken/?q=3060&k=20201125&g=166", //Could be improved.. but i dont know the product id
-                Videocard.RTX3070 => "https://www.informatique.nl/zoeken/?q=3070&k=20201125&g=166", //Could be improved.. but i dont know the product id
-                Videocard.RTX3080 => "https://www.informatique.nl/zoeken/?q=3080&k=20201125&g=166", //Could be improved.. but i dont know the product id
-                Videocard.RTX3090 => "https://www.informatique.nl/?m=sts&g=166&p=&sort=&ss=2&pr_min=&pr_max=&at529=27549",
+                Videocard.RX6800 => "https://www.informatique.nl/zoeken/?q=6800&k=20201125&g=166", //Could be improved.. but i dont know the product id
+                Videocard.RX6800XT => "https://www.informatique.nl/zoeken/?k=20201203&q=6800+XT&s=", //Could be improved.. but i dont know the product id
                 _ => Url,
             };
         }
@@ -75,21 +73,15 @@ namespace RX6800.Notifier.Library.Shop
         /// <returns>The <see cref="int"/>.</returns>
         private int CheckHtmlForStock(string html, Videocard card)
         {
-            string str = "RTX ";
+            string str = "RX ";
 
             switch (card)
             {
-                case Videocard.RTX3060TI:
-                    str += "3060 Ti";
+                case Videocard.RX6800:
+                    str += "6800";
                     break;
-                case Videocard.RTX3070:
-                    str += "3070";
-                    break;
-                case Videocard.RTX3080:
-                    str += "3080";
-                    break;
-                case Videocard.RTX3090:
-                    str += "3090";
+                case Videocard.RX6800XT:
+                    str += "6800 XT";
                     break;
             }
             if (html != "")

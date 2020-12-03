@@ -15,7 +15,7 @@ namespace RX6800.Notifier.Library.Shop
         /// <summary>
         /// Gets or sets the Url.
         /// </summary>
-        public string Url { get; set; } = "https://www.megekko.nl/Computer/Componenten/Videokaarten/Nvidia-Videokaarten?f=f_vrrd-3_s-prijs09_pp-50_p-1_d-list_cf-";
+        public string Url { get; set; } = "https://www.megekko.nl/Computer/Componenten/Videokaarten/AMD-Videokaarten?f=f_vrrd-3_s-prijs09_pp-50_p-1_d-list_cf-";
 
         #endregion
 
@@ -30,10 +30,8 @@ namespace RX6800.Notifier.Library.Shop
         {
             return card switch
             {
-                Videocard.RTX3060TI => "https://www.megekko.nl/Computer/Componenten/Videokaarten/Nvidia-Videokaarten/Graphics-Engine/GeForce-RTX-3060?f=f_vrrd-0_s-populair_pp-50_p-1_d-list_cf-",
-                Videocard.RTX3070 => "https://www.megekko.nl/Computer/Componenten/Videokaarten/Nvidia-Videokaarten/Graphics-Engine/GeForce-RTX-3070?f=f_vrrd-0_s-populair_pp-50_p-1_d-list_cf-",
-                Videocard.RTX3080 => "https://www.megekko.nl/Computer/Componenten/Videokaarten/Nvidia-Videokaarten/Graphics-Engine/GeForce-RTX-3080?f=f_vrrd-1_s-populair_pp-50_p-1_d-list_cf-",
-                Videocard.RTX3090 => "https://www.megekko.nl/Computer/Componenten/Videokaarten/Nvidia-Videokaarten/Graphics-Engine/GeForce-RTX-3090?f=f_vrrd-1_s-populair_pp-50_p-1_d-list_cf-",
+                Videocard.RX6800 => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6800",
+                Videocard.RX6800XT => "https://www.megekko.nl/info/Computer/Componenten/Videokaarten/AMD-Videokaarten/Graphics-Engine/AMD-RX-6800-XT",
                 _ => Url,
             };
         }
@@ -67,21 +65,15 @@ namespace RX6800.Notifier.Library.Shop
         /// <returns>The <see cref="int"/>.</returns>
         private int CheckHtmlForStock(string html, Videocard card)
         {
-            string str = "GeForce RTX ";
+            string str = "Radeon RX ";
 
             switch (card)
             {
-                case Videocard.RTX3060TI:
-                    str += "3060 Ti";
+                case Videocard.RX6800:
+                    str += "6800";
                     break;
-                case Videocard.RTX3070:
-                    str += "3070";
-                    break;
-                case Videocard.RTX3080:
-                    str += "3080";
-                    break;
-                case Videocard.RTX3090:
-                    str += "3090";
+                case Videocard.RX6800XT:
+                    str += "6800 XT";
                     break;
             }
 

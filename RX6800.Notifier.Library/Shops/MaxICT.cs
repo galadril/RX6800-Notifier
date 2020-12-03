@@ -16,7 +16,7 @@ namespace RX6800.Notifier.Library.Shop
         /// <summary>
         /// Gets or sets the Url.
         /// </summary>
-        public string Url { get; set; } = "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=GeForce RTX 3070&filters[grafische-processor][]=GeForce RTX 3080&filters[grafische-processor][]=GeForce RTX 3090";
+        public string Url { get; set; } = "https://maxict.nl/componenten/videokaarten/amd-rx?filters[grafische-processor][]=AMD RX 6800&filters[grafische-processor][]=AMD RX 6800 XT";
 
         #endregion
 
@@ -31,10 +31,8 @@ namespace RX6800.Notifier.Library.Shop
         {
             return card switch
             {
-                Videocard.RTX3060TI => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=GeForce RTX 3060",
-                Videocard.RTX3070 => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=GeForce RTX 3070",
-                Videocard.RTX3080 => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=GeForce RTX 3080",
-                Videocard.RTX3090 => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=GeForce RTX 3090",
+                Videocard.RX6800 => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=AMD RX 6800",
+                Videocard.RX6800XT => "https://maxict.nl/componenten/videokaarten/nvidia-rtx?filters[grafische-processor][]=AMD RX 6800 XT",
                 _ => Url,
             };
         }
@@ -46,10 +44,8 @@ namespace RX6800.Notifier.Library.Shop
         public Stock GetStock()
         {
             Dictionary<Videocard, int> values = new Dictionary<Videocard, int>();
-            GetStock(Videocard.RTX3060TI, "RTX 3060", values);
-            GetStock(Videocard.RTX3070, "RTX 3070", values);
-            GetStock(Videocard.RTX3080, "RTX 3080", values);
-            GetStock(Videocard.RTX3090, "RTX 3090", values);
+            GetStock(Videocard.RX6800, "RX 6800", values);
+            GetStock(Videocard.RX6800XT, "RX 6800 XT", values);
             return new Stock(this, values);
         }
 
@@ -72,6 +68,8 @@ namespace RX6800.Notifier.Library.Shop
                 html = html.Replace(@"\", string.Empty);
                 var splittedHtml = html.Split("<div class=\"product\"");
                 var filteredByName = splittedHtml.Where(o => o.Contains(name) && !o.Contains("DOCTYPE")).ToList();
+                if (card == Videocard.RX6800)
+                    filteredByName = filteredByName.Where(o => !o.Contains("RX 6800 XT")).ToList();
                 var filtered = filteredByName.Where(o => !o.Contains("0 op voorraad")).ToList();
                 values.Add(card, filtered.Count());
             }

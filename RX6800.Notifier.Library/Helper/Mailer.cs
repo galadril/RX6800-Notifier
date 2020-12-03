@@ -72,7 +72,7 @@ namespace RX6800.Notifier.Library.Helper
         /// <param name="subscriber">The subscriber<see cref="Subscriber"/>.</param>
         public static void SendNotification(Stock stock, Videocard videocard, Subscriber subscriber)
         {
-            string subject = $"GeForceTracker: {Enum.GetName(typeof(Videocard), videocard)}";
+            string subject = $"AMDTracker: {Enum.GetName(typeof(Videocard), videocard)}";
             string body = "Beste Lezer,<br><br>" +
                         $"De voorraad van {Enum.GetName(typeof(Videocard), videocard)} is aangevuld bij <a href=\"{stock.Website.GetProductUrl(videocard)}\">{stock.Website.GetType().Name}</a><br><br>" +
                         "Wees er snel bij!<br><br>" +
@@ -95,8 +95,8 @@ namespace RX6800.Notifier.Library.Helper
         /// <param name="log">The log<see cref="string"/>.</param>
         public static void SendLog(string log)
         {
-            string subject = $"GeForceTracker: new log";
-            string body = "GeForceTracker meld het volgende:<br><br>" + log;
+            string subject = $"AMDTracker: new log";
+            string body = "AMDTracker meld het volgende:<br><br>" + log;
 
             SendMail(Constants.GetErrorLogAddress(), subject, body);
         }
