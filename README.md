@@ -1,6 +1,10 @@
 # RX6800-notifier
 .NET Core application that scrapes RX6800 inventory numbers.
 
+This project is based on this Notifier from Niek Nijland > 
+https://github.com/NiekNijland/RTX3000-notifier
+
+
 ## Currently scrapes from:
 - megekko.nl
 - informatique.nl
