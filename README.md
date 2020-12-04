@@ -6,15 +6,18 @@ https://github.com/NiekNijland/RTX3000-notifier
 
 
 ## Currently scrapes from:
-- megekko.nl
-- informatique.nl
-- cdromland.nl
-- coolblue.nl
-- cyberport.de
-- centralpoint.nl
 
-disabled for now:
-- maxict.nl
+            notifier.TrackWebsite(new Megekko());
+            notifier.TrackWebsite(new Azerty());
+            notifier.TrackWebsite(new Cdromland());
+            notifier.TrackWebsite(new Informatique());
+            notifier.TrackWebsite(new Coolblue());
+            notifier.TrackWebsite(new Cyberport());
+            notifier.TrackWebsite(new Amazon());
+            notifier.TrackWebsite(new Centralpoint());
+            notifier.TrackWebsite(new PCKing());
+            notifier.TrackWebsite(new MaxICT());
+            notifier.TrackWebsite(new CaseKing());
 
 
 
