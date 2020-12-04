@@ -15,3 +15,12 @@ https://github.com/NiekNijland/RTX3000-notifier
 
 disabled for now:
 - maxict.nl
+
+
+
+
+# Donation
+
+If you like to say thanks, you could always buy me a cup of coffee (/beer)!   
+(Thanks!)  
+[![PayPal donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/markheinis)
