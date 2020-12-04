@@ -30,6 +30,7 @@ namespace RX6800.Notifier
             notifier.TrackWebsite(new Centralpoint());
             notifier.TrackWebsite(new PCKing());
             notifier.TrackWebsite(new MaxICT());
+            notifier.TrackWebsite(new CaseKing());
 
             notifier.Start();
             if(Constants.GetUseToasts())
